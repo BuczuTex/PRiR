@@ -28,7 +28,7 @@ void Wyslij(int nr_statku, int stan) {
     sleep(1);
 }
 
-void Lotnisko(int liczba_procesow) {
+void Port(int liczba_procesow) {
     int nr_statku, status;
     ilosc_statkow = liczba_procesow - 1;
     sleep(2);
@@ -130,7 +130,7 @@ int main(int argc, char *argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &liczba_procesow);
     srand(time(NULL));
     if(nr_procesu == 0)
-        Lotnisko(liczba_procesow);
+        Port(liczba_procesow);
     else
         Statek();
     MPI_Finalize();
